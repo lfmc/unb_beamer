@@ -1,0 +1,29 @@
+% \NeedsTexFormat{LaTeX2e}
+\ProvidesPackage{unbBeamer}[2023/02/04 Formatação para slides UnB]
+
+\RequirePackage{xcolor}
+
+\usetheme{Boadilla}
+
+\definecolor{unbGreen}{HTML}{008940}
+\definecolor{unbGreenLight}{HTML}{00B856}
+\definecolor{unbGreenDark}{HTML}{005427}
+\definecolor{unbBlue}{HTML}{133E79}
+\definecolor{unbBlueLight}{HTML}{1D5CB3}
+\definecolor{unbBlueDark}{HTML}{0A1F3D}
+
+\setbeamercolor{palette primary}{bg=unbGreen,fg=white}
+\setbeamercolor{palette secundary}{bg=unbGreenDark,fg=white}
+\setbeamercolor{palette tertiary}{bg=unbGreenLight,fg=white}
+\setbeamercolor{palette quaternary}{bg=unbGreen,fg=white}
+\setbeamercolor{structure}{fg=unbGreen}
+% \setbeamercolor{titlelike}{fg=green}
+\setbeamertemplate{enumerate item}[default]
+% \renewcommand{\labelenumii}{\Roman{\enumii}}
+\setbeamertemplate{enumerate subitem}{\arabic{enumii}}
+% \setbeamertemplate{enumerate subitem}{\insertsubsubenumlabel}
+% \setbeamercolor{enumerate item}{fg=green}
+% \setbeamercolor{itemize item}{fg=green}
+% \setbeamercolor{item}{fg=green}
+\setbeamercolor{alerted text}{fg=unbBlue}
+\setbeamercolor{example text}{fg=unbBlue}

@@ -1,0 +1,135 @@
+%% Beamer presentation template by Luis F. M. Cury 28/12/2024
+
+%% Compile using LuaLaTeX
+%% We use LuaLaTex for the package fontspec that allows us to use a system font.
+%% Otherwise, LaTex or XeLaTex compiler `should` work.
+%% The command to use LuaLaTex is as follows. Synctex is optional.
+%% latexmk -synctex=1 -interaction=nonstopmode -file-line-error -lualatex presentation.tex
+
+\documentclass[aspectratio=169, 12pt]{beamer}
+
+\usepackage[english]{babel}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage[backend=biber,language=english,style=abnt,justify,ittitles,giveninits=true]{biblatex}	% Citações padrão ABNT
+\usepackage{csquotes}
+
+%% Disable this package if you don't want to use LuaLaTex.
+%% To use UnB font download it at http://marca.unb.br/arquivosdigitais/files/fontes/UnB_Office_v1.0.zip
+%% and follow your OS's installation instructions.
+%% Otherwise, comment "%" to use a standard latex font.
+\usepackage{fontspec}
+\setmainfont{UnB Office}
+
+%% Use beamer configuration based on UnB official colors.
+\usepackage{unbBeamer}
+
+%% Numbered captions
+\setbeamertemplate{caption}[numbered]
+
+\addbibresource{biblio.bib}
+
+\title[Small Title]{Presentation Title}
+\subtitle{Optional subtitle}
+\date{DD/MM/YYYY}
+\author[Doe]{John Doe\inst{1}}
+\institute[UoE]{\inst{1} Template Department\\ University of Examples}
+
+%% Disable lower left-hand navigation symbols.
+\beamertemplatenavigationsymbolsempty
+
+\begin{document}
+
+%% Uncomment the following line to put all bibliography regardless of it being 
+%% individually cited.
+%% \nocite{*}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Presentation outline}
+    \tableofcontents
+\end{frame}
+
+\section{Section \#1}
+
+\begin{frame}
+    \frametitle{Frame title}
+    Blank frame example.
+    This is a \alert{text with alert}.
+\end{frame}
+
+\section{Section \#2}
+
+\begin{frame}
+    \frametitle{Frame with columns}
+    \begin{columns}[c]
+        \begin{column}{0.49\textwidth}
+            \begin{enumerate}
+                \item Delta
+                \item Echo
+                \item Foxtrot
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.49\textwidth}
+            \begin{itemize}
+                \item Alpha
+                \item Bravo
+                \item Charlie
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Frame with figure}
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.7\textheight]{fig/square.eps}
+        \caption{An empty square.}
+        \label{fig:square}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Frame with table}
+    \begin{table}
+        \centering
+        \caption{Fibonacci sequence.}
+        \begin{tabular}{ccc}
+            \toprule
+            $n$ & $a_n$ \\
+            \midrule
+            $0$ & $1$ \\
+            $1$ & $1$ \\
+            $2$ & $2$ \\
+            $3$ & $3$ \\
+            \bottomrule
+        \end{tabular}
+        \label{tab:fibonacci_sequence}
+    \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Frame with references}
+    The table \ref{tab:fibonacci_sequence} shows the first 4 numbers of the Fibbonaci sequence.
+
+    The figure \ref{fig:square} shows a square.
+
+    According to \textcite{key} this is a Beamer template.
+
+    This is a Beamer template \cite{key}.
+
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+    \printbibliography
+\end{frame}
+
+\end{document}
+
